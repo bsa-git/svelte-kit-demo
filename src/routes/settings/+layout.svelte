@@ -1,5 +1,7 @@
 <script lang="ts">
-  import type { LayoutData } from './$types';
+  import type { LayoutData } from "./$types";
+
+  console.log("clientLayout (Settings): OK");
 
   export let data: LayoutData;
 </script>
@@ -7,9 +9,10 @@
 <h1>Settings</h1>
 
 <div class="submenu">
-  {#each data.sections as section}
-    <a href="/settings/{section.slug}">{section.title}</a>
-  {/each}
+  <ul>
+    {#each data.sections as section}
+      <li><a href="/settings/{section.slug}">{section.title}</a></li>
+    {/each}
+  </ul>
 </div>
-
-<slot></slot>
+<slot />
