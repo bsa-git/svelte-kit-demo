@@ -2,4 +2,4 @@
 // it so that it gets served as a static asset in production
 export const prerender = true;
 
-console.log("serverPage (Home): OK")
+console.log("serverLayout (Home): OK")
