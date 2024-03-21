@@ -7,6 +7,8 @@
   <a href="/about">About</a>
   <a href="/settings">Settings</a>
   <a href="/blog">Blog</a>
+  <a href="/api">API</a>
 </nav>
+<br><br>
 
 <slot />

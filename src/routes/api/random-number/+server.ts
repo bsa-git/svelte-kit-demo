@@ -12,6 +12,6 @@ export const GET: RequestHandler = ({ url }) => {
 	}
 
 	const random = min + Math.random() * d;
-
-	return new Response(String(random));
+	
+	return new Response( String(random));
 };
