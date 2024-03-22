@@ -8,6 +8,7 @@
   <a href="/settings">Settings</a>
   <a href="/blog">Blog</a>
   <a href="/api">API</a>
+  <a href="/docs">Documentation</a>
 </nav>
 <br><br>
 
