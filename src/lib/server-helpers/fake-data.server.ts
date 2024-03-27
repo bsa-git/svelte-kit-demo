@@ -1,20 +1,22 @@
-import { error } from '@sveltejs/kit';
-import type { RequestHandler } from './$types';
+import type { RequestHandler } from '@sveltejs/kit';
+// import type { RequestHandler } from './$types';
+// type RequestHandler  @sveltejs/kit.RequestHandler<RouteParams, RouteId>;
+import { inspector } from '$lib/sys/util';
 
 const isDebug = false;
 
 async function getBreweryData(url: URL) {
 
 	const response = await fetch(url);
-	if (response && isDebug) console.log('getBreweryData.response:', response)
+	if (response && isDebug) inspector('getBreweryData.response:', response)
 	const responseData = await response.json();
-	if (responseData && isDebug) console.log('getBreweryData.responseData:', responseData)
+	if (responseData && isDebug) inspector('getBreweryData.responseData:', responseData);
 
 	return JSON.stringify(responseData);
 }
 
 export const GET: RequestHandler = async (reqEvent: any) => {
-	if (reqEvent && isDebug) console.log('RequestEvent:', reqEvent)
+	if (reqEvent && isDebug) inspector('RequestEvent:', reqEvent)
 
 	let result = null;
 	try {
