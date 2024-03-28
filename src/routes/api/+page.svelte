@@ -1,6 +1,12 @@
 <h1>API</h1>
 
 <div class="submenu">
+  <p><b>Example of working API with Blog (e.g "/blog/hello-world")</b></p>  
+  <ul>
+    <li><a href="/blog/hello-world">01. Get the article "hello-world" (HTTP method: GET)</a></li>
+    <li><a href="/blog/hello_world">02. Get an <span style="color: red;">ERROR</span> when accessing a non-existent blog article (HTTP method: GET)</a></li>
+  </ul>
+
   <p><b>Example of working API with the server (calculating values)</b></p>  
   <ul>
     <li><a href="/api/add-form">01. Get the sum of two digits (HTTP method: POST for form)</a></li>
@@ -20,6 +26,7 @@
     <li><a href="/api/fake-data/openbrewerydb/meta">08. Show all breweries meta data (HTTP method: GET for server)</a></li>
     <li><a href="/api/fake-data/openbrewerydb/meta/by_country/south_korea">09. Show South Korean breweries meta data (HTTP method: GET for server)</a></li>
     <li><a href="/api/fake-data/openbrewerydb/meta/by_type/micro">10. Show micro breweries meta data (HTTP method: GET for server)</a></li>
+    <li><a href="/api/fake-data/openbrewerydb/b54b16e1-ac3b-4bff-a11f-f7ae9ddc27e0_">11. Get an <span style="color: red;">ERROR</span> when accessing a non-existent brewery (HTTP method: GET for server)</a></li>
   </ul>
 
   <p><b>Example of working API with the server (get fake-data)</b></p>  

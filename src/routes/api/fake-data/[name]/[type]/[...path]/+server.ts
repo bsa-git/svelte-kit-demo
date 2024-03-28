@@ -15,6 +15,7 @@ export const GET: RequestHandler = async (reqEvent: any) => {
 		return new Response(result);
 
 	} catch (ex: any) {
+		inspector('Unknown error:', ex);
 		throw new Error(ex.message);
 	}
 };
