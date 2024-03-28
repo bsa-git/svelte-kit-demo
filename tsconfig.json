@@ -10,7 +10,7 @@
 		"sourceMap": true,
 		"strict": true,
 		"moduleResolution": "bundler",
-		"allowSyntheticDefaultImports": true
+		"allowSyntheticDefaultImports": true // It was needed to import the Lodash library correctly
 	}
 	// Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias
 	//
