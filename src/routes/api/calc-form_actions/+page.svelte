@@ -30,8 +30,8 @@
 <!-- Back to API -->
 <p><a href="/api">Back to API</a></p>
 
-<style>
+<!-- <style>
 	.error {
 		color: red;
 	}
-</style>
+</style> -->

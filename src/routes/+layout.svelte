@@ -2,6 +2,12 @@
   console.log("clientLayout (Home): OK");
 </script>
 
+html
+<style>
+  /* Импортируем стили из файла styles.css */
+  @import './styles.css';
+</style>
+
 <nav>
   <a href="/">Home</a>
   <a href="/about">About</a>
