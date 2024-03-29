@@ -3,13 +3,9 @@
 </script>
 
 html
-<style>
-  /* Импортируем стили из файла styles.css */
-  @import './styles.css';
-</style>
 
 <nav>
-  <a href="/">Home</a>
+  <a href="/" >Home</a>
   <a href="/about">About</a>
   <a href="/settings">Settings</a>
   <a href="/blog">Blog</a>

@@ -30,8 +30,6 @@
 <!-- Back to API -->
 <p><a href="/api">Back to API</a></p>
 
-<!-- <style>
-	.error {
-		color: red;
-	}
-</style> -->
+<style lang="css">
+	@import '../../styles.css';
+  </style>
