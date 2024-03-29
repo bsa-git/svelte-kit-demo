@@ -1,21 +1,17 @@
 <script lang="ts">
 	import type { ActionData } from "./$types";
 
-	let a = 0;
-	let b = 0;
+	let a: number|undefined = 0;
+	let b: number|undefined = 0;
 
 	export let form: ActionData;
-
-	if (form?.success) {
-		a = form.a ? form.a : 0;
-		b = form.b ? form.b : 0;
-	}
+	// Set values
+	a = form?.a;
+	b = form?.b;
 </script>
 
 <form method="POST">
-	{#if form?.missing}<p class="error">
-			ERROR: the `a` and `b` fields is required!
-		</p>{/if}
+	{#if form?.missing}<p class="error">ERROR: the `a` and `b` fields is required!</p>{/if}
 	{#if form?.incorrect}<p class="error">ERROR: the `a` must be less than `b`!</p>{/if}
 	<label>
 		Number1

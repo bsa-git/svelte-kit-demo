@@ -8,14 +8,14 @@ const isDebug = false;
 export const GET: RequestHandler = async (reqEvent: any) => {
 	if (reqEvent && isDebug) inspector('RequestEvent:', reqEvent)
 
-	let result: string | undefined = '';
-	
-	try {
-		result = await fakeDataService(reqEvent.params);
-		return new Response(result);
+	let result: any = null;
 
-	} catch (ex: any) {
-		inspector('Unknown error:', ex);
-		throw new Error(ex.message);
-	}
+	//try {
+	result = await fakeDataService(reqEvent.params);
+	return new Response(JSON.stringify(result));
+
+	// } catch (ex: any) {
+	// 	inspector('Unknown error:', ex);
+	// 	throw new Error(ex.message);
+	// }
 };
