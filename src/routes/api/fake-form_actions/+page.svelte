@@ -1,0 +1,34 @@
+<script lang="ts">
+	import type { ActionData } from "./$types";
+
+	let type: string|undefined = '';
+	let path: string|undefined = '';
+
+	export let form: ActionData;
+	// Set values
+	type = form?.type;
+	path = form?.path;
+</script>
+
+<form method="POST">
+	{#if form?.missing}<p class="error">ERROR: the `type` field is required!</p>{/if}
+	{#if form?.incorrect}<p class="error">ERROR: the `type` value must have the specified value!</p>{/if}
+	<label>
+		Type:
+		<input name="type" type="string" bind:value={type} />
+	</label>
+	<label>
+		Path:
+		<input name="path" type="string" bind:value={path} />
+	</label>
+	<button formaction="?/openbrewerydb">OpenBreweryDB</button>
+</form>
+{#if form?.success}
+	<p>Result: {form?.result}</p>
+{/if}
+<!-- Back to API -->
+<p><a href="/api">Back to API</a></p>
+
+<style lang="css">
+	@import '../../styles.css';
+  </style>

@@ -10,12 +10,6 @@ export const GET: RequestHandler = async (reqEvent: any) => {
 
 	let result: any = null;
 
-	//try {
 	result = await fakeDataService(reqEvent.params);
 	return new Response(JSON.stringify(result));
-
-	// } catch (ex: any) {
-	// 	inspector('Unknown error:', ex);
-	// 	throw new Error(ex.message);
-	// }
 };

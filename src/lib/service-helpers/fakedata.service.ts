@@ -23,7 +23,7 @@ async function getFakeData(url: URL) {
 }
 
 export const fakeDataService = async (params: Params) => {
-	if (params && isDebug) inspector('RequestParams:', params)
+	if (params && true) inspector('RequestParams:', params)
 
 	let url: URL;
 	let search: string = '';
@@ -31,24 +31,36 @@ export const fakeDataService = async (params: Params) => {
 
 	const serviceName = params.name;
 	if (serviceName === 'openbrewerydb') {
+		const listOfAllowedTypes: string[] = ['single', 'list', 'random', 'search', 'autocomplete', 'meta'];
+		
+		// Check allowed types
 		let type = params.type;
-		type = (type === 'list') ? '' : `/${type}`;
+		if(!listOfAllowedTypes.includes(type)) {
+			return error(400, { message: `The type: "${type}" does not match the type of the request!` });
+		}
+
+		//Convert types: 'single', 'list'
 		let path: any = params.path ? params.path : '';
+		if(type === 'single') {
+			type = path;
+			path = '';
+		} 
+		type = (type === 'list') ? '' : `/${type}`;
 
 		// Convert path to Array
 		path = path ? path.split('/') : [];
 		path = loChunk(path, 2);
-		if (path && isDebug) console.log('fakeDataService.path:', path);
+		if (path && true) console.log('fakeDataService.path:', path);
 
 		// Get search string for request
 		loForEach(path, function (value) {
 			search = search ? search + `&${value[0]}=${value[1]}` : search + `?${value[0]}=${value[1]}`;
 		});
-		if (search && isDebug) console.log('fakeDataService.search:', search);
+		if (search && true) console.log('fakeDataService.search:', search);
 
 		// Get URL for request
 		url = new URL(`https://api.openbrewerydb.org/v1/breweries${type}${search}`);
-		if (url && isDebug) console.log('fakeDataService.url:', url.toString());
+		if (url && true) console.log('fakeDataService.url:', url.toString());
 
 		// Get fake data
 		result = await getFakeData(url);
