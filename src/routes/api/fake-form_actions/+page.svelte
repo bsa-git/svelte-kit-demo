@@ -1,6 +1,8 @@
 <script lang="ts">
 	import type { ActionData } from "./$types";
 
+	const isDebug = false;
+
 	let type: string|undefined = '';
 	let path: string|undefined = '';
 
@@ -8,18 +10,21 @@
 	// Set values
 	type = form?.type;
 	path = form?.path;
+
+	if(form && true) console.log('Page.form:', form);
 </script>
 
 <form method="POST">
-	{#if form?.missing}<p class="error">ERROR: the `type` field is required!</p>{/if}
-	{#if form?.incorrect}<p class="error">ERROR: the `type` value must have the specified value!</p>{/if}
+	{#if form?.missing}<p class="error">ERROR: {form?.message}!</p>{/if}
+	{#if form?.incorrect}<p class="error">ERROR: {form?.message}!</p>{/if}
+	{#if form?.service_error}<p class="error">SERVICE ERROR: {form?.message}</p>{/if}
 	<label>
 		Type:
-		<input name="type" type="string" bind:value={type} />
+		<input name="type" type="text" bind:value={type} />
 	</label>
 	<label>
 		Path:
-		<input name="path" type="string" bind:value={path} />
+		<input name="path" type="text" bind:value={path} />
 	</label>
 	<button formaction="?/openbrewerydb">OpenBreweryDB</button>
 </form>

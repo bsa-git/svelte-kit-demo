@@ -29,9 +29,9 @@
     <li><a href="/api/fake-data/openbrewerydb/single/b54b16e1-ac3b-4bff-a11f-f7ae9ddc27e0_">11. Get an <span class="error">ERROR</span> when accessing a non-existent brewery (HTTP method: GET for server)</a></li>
   </ul>
 
-  <p><b>Example of working API with the server (get fake-data)</b></p>  
+  <p><b>Example of working API with the fake-data service (Get fake-data)</b></p>  
   <ul>
-    <li><a href="/api/fake-data/openbrewerydb/b54b16e1-ac3b-4bff-a11f-f7ae9ddc27e0">Get a single brewery</a></li>
+    <li><a href="/api/fake-form_actions">An example of receiving fake data (HTTP method: POST for form actions)</a></li>
   </ul>
 </div>
 

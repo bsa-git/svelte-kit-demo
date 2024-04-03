@@ -2,15 +2,12 @@
   console.log("clientLayout (Home): OK");
 </script>
 
-html
-
 <nav>
   <a href="/" >Home</a>
   <a href="/about">About</a>
   <a href="/settings">Settings</a>
   <a href="/blog">Blog</a>
   <a href="/api">API</a>
-  <a href="/docs">Documentation</a>
 </nav>
 <br><br>
 

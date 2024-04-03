@@ -1,6 +1,6 @@
 import { error, fail } from '@sveltejs/kit';
-import { inspector } from '$lib/sys/util';
 import loChunk from 'lodash/chunk';
+import { inspector } from '$lib/sys/util';
 import loForEach from 'lodash/forEach';
 
 type Params = {
@@ -23,7 +23,7 @@ async function getFakeData(url: URL) {
 }
 
 export const fakeDataService = async (params: Params) => {
-	if (params && true) inspector('RequestParams:', params)
+	if (params && true) inspector('fakeDataService.params:', params)
 
 	let url: URL;
 	let search: string = '';
@@ -50,21 +50,25 @@ export const fakeDataService = async (params: Params) => {
 		// Convert path to Array
 		path = path ? path.split('/') : [];
 		path = loChunk(path, 2);
-		if (path && true) console.log('fakeDataService.path:', path);
+		if (path && isDebug) console.log('fakeDataService.path:', path);
 
 		// Get search string for request
 		loForEach(path, function (value) {
 			search = search ? search + `&${value[0]}=${value[1]}` : search + `?${value[0]}=${value[1]}`;
 		});
-		if (search && true) console.log('fakeDataService.search:', search);
+		if (search && isDebug) console.log('fakeDataService.search:', search);
 
 		// Get URL for request
 		url = new URL(`https://api.openbrewerydb.org/v1/breweries${type}${search}`);
-		if (url && true) console.log('fakeDataService.url:', url.toString());
+		if (url && isDebug) console.log('fakeDataService.url:', url.toString());
 
 		// Get fake data
 		result = await getFakeData(url);
-		if (result && result.message) return error(400, { message: result.message });
+		// Check error
+		if (result && result.message) {
+			if(result && isDebug) inspector('fakeDataService.result.message:', result.message);
+			return error(400, { message: result.message });
+		} 
 
 		return result;
 	}
