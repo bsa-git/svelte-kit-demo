@@ -1,12 +1,6 @@
 <h1>API</h1>
 
 <div class="submenu">
-  <p><b>Example of working API with Blog (e.g "/blog/hello-world")</b></p>  
-  <ul>
-    <li><a href="/blog/hello-world">01. Get the article "hello-world" (HTTP method: GET)</a></li>
-    <li><a href="/blog/hello_world">02. Get an <span class="error">ERROR</span> when accessing a non-existent blog article (HTTP method: GET)</a></li>
-  </ul>
-
   <p><b>Example of working API with the server (calculating values)</b></p>  
   <ul>
     <li><a href="/api/add-form">01. Get the sum of two digits (HTTP method: POST for form)</a></li>

@@ -1,21 +1,18 @@
 <script lang="ts">
-  type Post = {
-    slug: string;
-    title: string;
-    content?: string;
-  };
+  import type { Summaries } from "./blog";
+  const isDebug = false;
 
-  type Summaries = {
-    summaries: Post[];
-  };
-  
+  isDebug? console.log("Page.svelte (Blog): OK") : '';
+    
   export let data: Summaries;
 </script>
 
-<h1>blog</h1>
-
+<h1>Blog</h1>
+{#if data.summaries}
 <ul>
   {#each data.summaries as { slug, title }}
     <li><a href="/blog/{slug}">{title}</a></li>
   {/each}
 </ul>
+{/if}
+

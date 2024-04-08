@@ -1,8 +1,4 @@
-type Post = {
-	slug: string,
-	title: string,
-	content: string
-}
+import type { Post } from "./blog";
 
 export const posts: Post[] = [
 	{
