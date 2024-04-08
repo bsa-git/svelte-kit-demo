@@ -2,4 +2,5 @@
 // it so that it gets served as a static asset in production
 export const prerender = true;
 
-console.log("serverLayout (Home): OK")
+const isDebug = true;
+isDebug? console.log("Layout.ts (Home): OK") : '';

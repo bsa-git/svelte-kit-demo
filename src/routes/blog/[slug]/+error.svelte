@@ -10,6 +10,3 @@
   Page Status: {$page.status}; PageError: "{$page.error?.message}"
 </h3>
 
-<style>
-  @import "../../styles.css";
-</style>

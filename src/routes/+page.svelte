@@ -1,5 +1,6 @@
 <script lang="ts">
-    console.log("clientPage (Home): OK");
+    const isDebug = true;
+    isDebug? console.log("Page.svelte (Home): OK") : '';
 </script>
 
 <h1>Home</h1>

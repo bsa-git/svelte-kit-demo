@@ -34,7 +34,3 @@
     <li><a href="/api/fake-form_actions">An example of receiving fake data (HTTP method: POST for form actions)</a></li>
   </ul>
 </div>
-
-<style lang="css">
-  @import '../styles.css';
-</style>

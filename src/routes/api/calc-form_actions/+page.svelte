@@ -30,6 +30,3 @@
 <!-- Back to API -->
 <p><a href="/api">Back to API</a></p>
 
-<style lang="css">
-	@import '../../styles.css';
-  </style>
