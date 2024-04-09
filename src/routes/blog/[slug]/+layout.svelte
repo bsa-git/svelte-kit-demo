@@ -1,12 +1,27 @@
 <script lang="ts">
-	const isDebug = true;
-	isDebug? console.log("Layout.svelte (Blog/[slug]): OK") : '';
+  import type { LayoutData } from './$types'
+  const isDebug = true;
+	
+  export let data: LayoutData;
+  if(data && isDebug) console.log("Layout.svelte (Blog/[slug]): OK");
+  if(data && isDebug) console.log("Layout.svelte (Blog/[slug]).data:", data);
 </script>
 
 <div class="layout">
 	<main>
 		<slot />
 	</main>
+
+  <aside>
+		<h2>More posts</h2>
+		<ul>
+			{#each data.summaries as { slug, title }}
+				<li>
+					<a href="/blog/{slug}">{title}</a>
+				</li>
+			{/each}
+		</ul>
+	</aside>
 </div>
 
 <style>

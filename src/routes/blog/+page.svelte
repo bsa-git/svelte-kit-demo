@@ -1,10 +1,13 @@
 <script lang="ts">
-  import type { Summaries } from "./blog";
-  const isDebug = false;
+  import type { PageData } from './$types'
+  import { page } from '$app/stores';
+  
+  const isDebug = true;
 
-  isDebug? console.log("Page.svelte (Blog): OK") : '';
-    
-  export let data: Summaries;
+  if($page && isDebug) console.log("Page.svelte (Blog): OK");
+  if($page && isDebug) console.log("Page.svelte (Blog).$page:", $page);
+
+  export let data: PageData;
 </script>
 
 <h1>Blog</h1>
