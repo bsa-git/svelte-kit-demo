@@ -2,9 +2,9 @@
   import type { PageData } from './$types'
   import { page } from '$app/stores';
   
-  const isDebug = true;
+  const isDebug = false;
 
-  if($page && isDebug) console.log("Page.svelte (Blog): OK");
+  if($page && true) console.log("Page.svelte (Blog): OK");
   if($page && isDebug) console.log("Page.svelte (Blog).$page:", $page);
 
   export let data: PageData;

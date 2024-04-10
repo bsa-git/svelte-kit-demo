@@ -1,17 +1,19 @@
 import { error } from '@sveltejs/kit';
+import { inspector } from '$lib/sys/util'
 import { posts } from '../data';
-const isDebug = true;
+const isDebug = false;
 
 /** 
  * @type {import('./$types').PageServerLoad} 
 */
-export function load({ params }) {
+export function load(args) {// params
 
-  isDebug? console.log("PageServer.ts (Blog/[slug]): OK") : '';
+  if(args && true) console.log("PageServer.ts (Blog/[slug]): OK");
+  if(args && isDebug) inspector("PageServer.ts (Blog).args:", args);
 
-	const post = posts.find((post) => post.slug === params.slug);
+	const post = posts.find((post) => post.slug === args.params.slug);
   if(post) return {	post };
 	
-  error(404, `There's an invalid pathname: "${params.slug}"`);
+  error(404, `There's an invalid pathname: "${args.params.slug}"`);
 	
 }

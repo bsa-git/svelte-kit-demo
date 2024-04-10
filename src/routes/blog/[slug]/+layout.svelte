@@ -1,9 +1,9 @@
 <script lang="ts">
   import type { LayoutData } from './$types'
-  const isDebug = true;
+  const isDebug = false;
 	
   export let data: LayoutData;
-  if(data && isDebug) console.log("Layout.svelte (Blog/[slug]): OK");
+  if(data && true) console.log("Layout.svelte (Blog/[slug]): OK");
   if(data && isDebug) console.log("Layout.svelte (Blog/[slug]).data:", data);
 </script>
 

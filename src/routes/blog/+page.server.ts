@@ -1,13 +1,15 @@
 import type { Post, Summaries } from "./blog";
+import { inspector } from '$lib/sys/util'
 import { posts } from './data';
-const isDebug = true;
+const isDebug = false;
 
 /** 
  * @type {import('./$types').PageServerLoad} 
 */
-export function load(): Summaries {
+export function load(args): Summaries {
 
-	isDebug? console.log("PageServer.ts (Blog): OK") : '';
+	if(args && true) console.log("PageServer.ts (Blog): OK");
+  if(args && isDebug) inspector("PageServer.ts (Blog).args:", args);
 
 	const postsData: Summaries = {
 		summaries: posts.map((post: Post) => ({

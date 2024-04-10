@@ -1,0 +1,1 @@
+<h1>Function, which — unsurprisingly — can be used to set headers on the response</h1>

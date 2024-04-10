@@ -1,11 +1,13 @@
 import type { Post, Summaries } from "../blog";
+import { inspector } from '$lib/sys/util'
 import { posts } from '../data';
-const isDebug = true;
+const isDebug = false;
 
 /** @type {import('./$types').LayoutServerLoad} */
-export function load(): Summaries {
+export function load(args): Summaries {
 
-	isDebug? console.log("LayoutServer.ts (Blog/[slug]): OK") : '';
+  if(args && true) console.log("LayoutServer.ts (Blog/[slug]): OK");
+  if(args && isDebug) inspector("LayoutServer.ts (Blog/[slug]).args:", args);
 
 	const postsData: Summaries = {
 		summaries: posts.map((post: Post) => ({

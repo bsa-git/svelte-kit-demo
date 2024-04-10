@@ -5,7 +5,7 @@ export const load: LayoutLoad = () => {
   return {
     sections: [
       { slug: 'profile', title: 'Profile' },
-      { slug: 'notifications', title: 'Notifications' },
+      { slug: 'set-headers', title: 'Set "Content-Type" header to "text/plain"' },
     ],
   };
 };
