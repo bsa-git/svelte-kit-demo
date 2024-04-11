@@ -1,3 +1,4 @@
+import type { PageServerLoad } from './$types';
 import { error } from '@sveltejs/kit';
 import { inspector } from '$lib/sys/util'
 import { posts } from '../data';
@@ -6,7 +7,7 @@ const isDebug = false;
 /** 
  * @type {import('./$types').PageServerLoad} 
 */
-export function load(args) {// params
+export const load: PageServerLoad = (args) => {
 
   if(args && true) console.log("PageServer.ts (Blog/[slug]): OK");
   if(args && isDebug) inspector("PageServer.ts (Blog).args:", args);

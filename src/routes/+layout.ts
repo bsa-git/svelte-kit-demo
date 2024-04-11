@@ -3,4 +3,4 @@
 export const prerender = true;
 
 const isDebug = true;
-isDebug? console.log("Layout.ts (Home): OK") : '';
+if(isDebug) console.log("Layout.ts (Home): OK");

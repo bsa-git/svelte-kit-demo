@@ -23,7 +23,7 @@ async function getFakeData(url: URL) {
 }
 
 export const fakeDataService = async (params: Params) => {
-	if (params && true) inspector('fakeDataService.params:', params)
+	if (params && isDebug) inspector('fakeDataService.params:', params)
 
 	let url: URL;
 	let search: string = '';

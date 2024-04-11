@@ -1,10 +1,11 @@
+import type { LayoutServerLoad } from './$types';
 import type { Post, Summaries } from "../blog";
 import { inspector } from '$lib/sys/util'
 import { posts } from '../data';
 const isDebug = false;
 
 /** @type {import('./$types').LayoutServerLoad} */
-export function load(args): Summaries {
+export const load: LayoutServerLoad = (args) => {
 
   if(args && true) console.log("LayoutServer.ts (Blog/[slug]): OK");
   if(args && isDebug) inspector("LayoutServer.ts (Blog/[slug]).args:", args);

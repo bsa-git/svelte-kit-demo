@@ -1,9 +1,11 @@
 <script lang="ts">
   import type { LayoutData } from "./$types";
 
-  console.log("clientLayout (Settings): OK");
+  const isDebug = false;
+  if(true) console.log("Layout.svelte (Settings): OK");
 
   export let data: LayoutData;
+
 </script>
 
 <h1>Settings</h1>
@@ -15,4 +17,4 @@
     {/each}
   </ul>
 </div>
-<slot />
+<slot></slot>
