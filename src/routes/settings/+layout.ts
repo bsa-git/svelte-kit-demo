@@ -10,6 +10,7 @@ export const load: LayoutLoad = () => {
       { slug: 'profile', title: 'Profile' },
       { slug: 'set-headers', title: 'Set header' },
       { slug: 'cookies', title: 'Reading and writing cookies' },
+      { slug: 'todo-list', title: 'ToDo List' },
     ],
   };
 };
