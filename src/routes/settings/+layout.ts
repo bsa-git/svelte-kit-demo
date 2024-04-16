@@ -11,6 +11,7 @@ export const load: LayoutLoad = () => {
       { slug: 'set-headers', title: 'Set header' },
       { slug: 'cookies', title: 'Reading and writing cookies' },
       { slug: 'todo-list', title: 'ToDo List' },
+      { slug: 'todo-actions', title: 'ToDo Actions' },
     ],
   };
 };
