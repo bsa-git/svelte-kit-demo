@@ -8,8 +8,7 @@
   export let form: ActionData;
 
   if (data && true) console.log("Page.svelte (setting/todo-actions): OK");
-  if (data && isDebug)
-    console.log("Page.svelte (setting/todo-actions).data:", data);
+  if (data && isDebug) console.log("Page.svelte (setting/todo-actions).data:", data);
 </script>
 
 <div class="centered">
