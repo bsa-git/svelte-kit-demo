@@ -12,7 +12,7 @@
 </script>
 
 <div class="centered">
-  <h1>todos</h1>
+  <h1>ToDos-Actions</h1>
 
   {#if form?.error}
     <p class="error">{form.error}</p>
@@ -20,7 +20,7 @@
 
   <form method="POST" action="?/create" use:enhance>
     <label>
-      add a todo:
+      Add a ToDo:
       <input
         name="description"
         value={form?.description ?? ""}
@@ -45,7 +45,7 @@
 
 <style>
   .centered {
-    max-width: 20em;
+    max-width: 50em;
     margin: 0 auto;
   }
 
@@ -74,9 +74,5 @@
 
   button:hover {
     opacity: 1;
-  }
-
-  .saving {
-    opacity: 0.5;
   }
 </style>

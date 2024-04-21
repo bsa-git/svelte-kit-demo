@@ -9,11 +9,11 @@ if(data && isDebug) console.log("Page.svelte (setting/todo-list).data:", data);
 </script>
 
 <div class="centered">
-	<h1>todos</h1>
+	<h1>ToDos-List</h1>
 
   <form method="POST">
 		<label>
-			add a todo:
+			Add a ToDo:
 			<input
 				name="description"
 				autocomplete="off"
@@ -32,7 +32,7 @@ if(data && isDebug) console.log("Page.svelte (setting/todo-list).data:", data);
 
 <style>
 	.centered {
-		max-width: 20em;
+		max-width: 50em;
 		margin: 0 auto;
 	}
 
