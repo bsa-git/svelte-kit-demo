@@ -28,8 +28,10 @@ export const load: PageServerLoad = ({ cookies }) => {
 /** @type {import('./$types').Actions} */
 export const actions: Actions = {
   create: async ({ cookies, request }) => {
-    if (request && true)
+    if (request && true){
       console.log("PageServer.ts (setting/todo-actions).actions.create: OK");
+    }
+    await new Promise((fulfil) => setTimeout(fulfil, 1000));
     const data = await request.formData();
     const userid = cookies.get("userid");
     let description = data.get("description")?.toString();
@@ -51,8 +53,10 @@ export const actions: Actions = {
     }
   },
   delete: async ({ cookies, request }) => {
-    if (request && true)
+    if (request && true) {
       console.log("PageServer.ts (setting/todo-actions).actions.delete: OK");
+    }
+    await new Promise((fulfil) => setTimeout(fulfil, 1000));      
     const data = await request.formData();
     const userid = cookies.get("userid")?.toString();
     const id = data.get("id")?.toString();
