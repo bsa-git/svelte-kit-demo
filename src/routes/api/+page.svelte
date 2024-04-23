@@ -27,4 +27,10 @@
   <ul>
     <li><a href="/api/fake-form_actions">An example of receiving fake data (HTTP method: POST for form actions)</a></li>
   </ul>
+
+  <p><b>Example of working handlers API with the server</b></p>  
+  <ul>
+    <li><a href="/api/server-handlers/get-handler">An example of receiving fake data (HTTP method: GET for calculating of random number)</a></li>
+  </ul>
+  <br/>
 </div>
