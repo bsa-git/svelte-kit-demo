@@ -30,7 +30,9 @@
 
   <p><b>Example of working handlers API with the server</b></p>  
   <ul>
-    <li><a href="/api/server-handlers/get-handler">An example of receiving fake data (HTTP method: GET for calculating of random number)</a></li>
+    <li><a href="/api/server-handlers/get-handler">An example of receiving random number (HTTP method: GET for calculating of random number)</a></li>
+    <li><a href="/api/server-handlers/post-handler">An example of Todo list (HTTP method: POST for Todo list)</a></li>
+    <li><a href="/api/server-handlers/put-delete-handler">An example of Todo list (HTTP methods: POST,PUT,DELETE for Todo list)</a></li>
   </ul>
   <br/>
 </div>
