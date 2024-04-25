@@ -1,10 +1,45 @@
 <script lang="ts">
-  import type { PageData } from './$types';
+  import type { PageData } from "./$types";
   export let data: PageData;
 
   const isDebug = false;
-  if (data && true) console.log("Page.svelte (api/server-handlers/put-delete-handler): OK");
-  if (data && isDebug) console.log("Page.svelte (api/server-handlers/put-delete-handler).data:", data);
+  if (data && true)
+    console.log("Page.svelte (api/server-handlers/put-delete-handler): OK");
+  if (data && isDebug)
+    console.log(
+      "Page.svelte (api/server-handlers/put-delete-handler).data:",
+      data
+    );
+
+  const onAddTodo = async (e: any) => {
+    if (e.key !== "Enter") return;
+
+    const input = e.currentTarget;
+    const description = input.value;
+
+    const response = await fetch(
+      "/api/server-handlers/put-delete-handler/todo",
+      {
+        method: "POST",
+        body: JSON.stringify({ description }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    const { id } = await response.json();
+
+    data.todos = [
+      ...data.todos,
+      {
+        id,
+        description,
+      },
+    ];
+
+    input.value = "";
+  };
 </script>
 
 <div class="centered">
@@ -12,36 +47,7 @@
 
   <label>
     add a todo:
-    <input
-      type="text"
-      autocomplete="off"
-      on:keydown={async (e) => {
-        if (e.key !== "Enter") return;
-
-        const input = e.currentTarget;
-        const description = input.value;
-
-        const response = await fetch("/api/server-handlers/put-delete-handler/todo", {
-          method: "POST",
-          body: JSON.stringify({ description }),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
-
-        const { id } = await response.json();
-
-        data.todos = [
-          ...data.todos,
-          {
-            id,
-            description,
-          },
-        ];
-
-        input.value = "";
-      }}
-    />
+    <input type="text" autocomplete="off" on:keydown={onAddTodo} />
   </label>
 
   <ul class="todos">
@@ -53,25 +59,30 @@
             checked={todo.done}
             on:change={async (e) => {
               const done = e.currentTarget.checked;
-
-              await fetch(`/api/server-handlers/put-delete-handler/todo/${todo.id}`, {
-								method: 'PUT',
-								body: JSON.stringify({ done }),
-								headers: {
-									'Content-Type': 'application/json'
-								}
-							});
+              await fetch(
+                `/api/server-handlers/put-delete-handler/todo/${todo.id}`,
+                {
+                  method: "PUT",
+                  body: JSON.stringify({ done }),
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                }
+              );
             }}
           />
           <span>{todo.description}</span>
           <button
             aria-label="Mark as complete"
             on:click={async (e) => {
-              await fetch(`/api/server-handlers/put-delete-handler/todo/${todo.id}`, {
-								method: 'DELETE'
-							});
+              await fetch(
+                `/api/server-handlers/put-delete-handler/todo/${todo.id}`,
+                {
+                  method: "DELETE",
+                }
+              );
 
-							data.todos = data.todos.filter((t) => t !== todo);
+              data.todos = data.todos.filter((t) => t !== todo);
             }}
           />
         </label>
